@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+    <head>                
+        <!-- Google tag (gtag.js) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-7L02W3ZMS5"></script>
+        <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-7L02W3ZMS5');
+        </script>
+
+        <title>MonkeyGG2</title>
+        <link href="/style.css" rel="stylesheet"/>
+        <script>
+            function clone(){
+                var url = window.location.href
+                var urlObj = new window.URL(window.location.href);
+                win = window.open();
+                win.document.body.style.margin = "0";
+                win.document.body.style.height = "100vh";
+                var iframe = win.document.createElement("iframe");
+                iframe.style.border = "none";
+                iframe.style.width = "100%";
+                iframe.style.height = "100%";
+                iframe.style.margin = "0";
+                iframe.referrerpolicy = "no-referrer";
+                iframe.allow = "fullscreen";
+                iframe.src = url.toString();
+                win.document.body.appendChild(iframe);
+                var script = win.document.createElement("script");
+                script.src = "https://3kh0.github.io/js/main.js";
+                win.document.body.appendChild(script);
+                window.location.replace("https://mail.google.com")
+            }
+
+            function stoopid(){
+                while(!confirm('By pressing OK I agree that "i is stoopid"')){}
+                alert('Thank you for confirming you are stoopid');
+            }
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key.toLowerCase() === 'q' && e.ctrlKey) {
+                    e.preventDefault();
+                    clone()
+                }
+            });
+            
+            function searchSort() {
+                var input, filter, ul, li, a, i;
+                input = document.getElementById("searchBar");
+                filter = input.value.toUpperCase();
+                ul = document.getElementById("subpageList");
+                li = ul.getElementsByTagName("li");
+                for (i = 0; i < li.length; i++) {
+                    a = li[i].getElementsByTagName("a")[0];
+                    if (a.innerHTML.toUpperCase().indexOf(filter) > -1) {
+                    li[i].style.display = "";
+                    } else {
+                    li[i].style.display = "none";
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body style="background-color:#2f3136">
+        <h1 style="color:#dcddde">Subpages</h1>
+        <input type="text" id="searchBar" oninput="searchSort()" placeholder="Search...">
+
+        <ul id="subpageList">
+            <li><a href="/2048">2048</a></li>
+            <li><a href="/chrome-dino">Chrome Dino</a></li>
+            <li><a href="/chrome-dino-hacks">Chrome Dino Hacks</a></li>
+            <li><a href="/cookie-clicker">Cookie Clicker</a></li>
+            <li><a href="/flappy-bird">Flappy Bird</a></li>
+            <li><a href="/secret-easter-egg">Free Money</a></li>
+            <li><a href="/hextris">Hextris</a></li>
+            <li><a href="/idle-breakout">Idle Breakout</a></li>
+            <li><a href="/idle-breakout-save-gen">Idle Breakout Hacks</a></li>
+            <li><a href="/slope">Slope</a></li>
+        </ul>
+        <button onclick="stoopid()" style="background-color:black;color:white;cursor:pointer;font-size:15px;border-color:SlateGray;border-radius: 32px;font-size:20px;padding:16px;border-width:5px;width:100%">Click me</button>
+    </body>
+</html>

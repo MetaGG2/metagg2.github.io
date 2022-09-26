@@ -1,0 +1,83 @@
+<DOCTYPE html>
+    <head>
+        <title>Secret easter eg??</title>
+        <style>
+          html, body {
+            background-color:black;
+            color:beige;
+            height: 100%;
+            width: 100%;
+            font-size:100%;
+          }
+          .center {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+          }
+          button{
+            background-color: beige;
+            font-size:200%;
+            border-radius: 8px;
+            padding: 5px;
+            margin: 5vw;
+          }
+          button:hover{
+            background-color: black;
+            color:white;
+            border-color: beige;
+            cursor: pointer;
+          }
+          h1{
+            font-size:300%;
+          }
+        </style>
+    </head>
+    <body>
+      <h1 id="question" style="margin-top:20vh;text-align: center;">if ur seeing this u prolly diabled js :(</h1>
+      <div class="center">
+        <embed id="moneygif" style="display: none; height:100vmin; width:vmin" src="/secret-easter-egg/freemoney.gif"></embed>
+        <button id="yes">Yes</button>
+        <button id="no">No</button>
+      </div>
+      
+      <audio id="moneymp3">
+        <source src="/secret-easter-egg/freemoney.mp3" type="audio/mpeg">
+      </audio>
+      <script>
+        document.onkeydown = function (e) {
+    e = e || window.event;
+
+    if (!e.ctrlKey) return;
+
+    var code = e.which || e.keyCode;
+
+    switch (code) {
+        case 87:
+            e.preventDefault();
+            e.stopPropagation();
+            break;
+    }
+};
+
+        document.onclick = function() {  
+          document.getElementById('moneymp3').play();
+          document.getElementById('moneygif').style.display="block";
+          document.getElementById('yes').style.display="none";
+          document.getElementById('no').style.display="none";
+          document.getElementById('question').style.display="none";
+        };
+
+        var questions = ["do u want bitcoin?", "do u want free money?", "do u like rabbits?"];
+          document.getElementById('question').innerHTML = (questions[Math.floor(Math.random() * questions.length)]);
+        
+        window.onbeforeunload = function (e) {\
+            e.preventDefault();
+            e.returnValue =  "Do you want to leave? I really want u to keep watching rickroll :)";
+        }
+      </script>
+    
+    </body>
+</html>
